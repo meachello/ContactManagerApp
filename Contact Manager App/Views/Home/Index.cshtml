@@ -1,0 +1,21 @@
+﻿@using Microsoft.Web.Helpers;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Here you can upload your CSV file</p>
+    <form method="post" enctype="multipart/form-data" asp-controller="Users" asp-action="Upload">
+        <div>
+            <label for="file">Choose file to upload</label>
+            <input type="file" id="file" name="file"/>
+        </div>
+        <div>
+            <button>Upload</button>
+        </div>
+    </form>
+</div>

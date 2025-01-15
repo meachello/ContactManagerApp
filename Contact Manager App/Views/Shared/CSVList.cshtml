@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Contact_Manager_App.Models.User>
+@{
+    ViewBag.Title = "CSVList";
+}
+
+@if (Model == null || !Model.Any())
+{
+    <p>No users available.</p>
+}
+else
+{
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Is Married</th>
+            <th>Phone</th>
+            <th>Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.DateOfBirth.ToShortDateString()</td>
+                <td>@user.IsMarried</td>
+                <td>@user.Phone</td>
+                <td>@user.Salary</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
